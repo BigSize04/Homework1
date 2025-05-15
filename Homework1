@@ -1,0 +1,75 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    // Задача 1
+    int input1;
+    do {
+        cout << "Введіть число (не менше 1): ";
+        cin >> input1;
+    } while (input1 < 1);
+
+    int sum = 0;
+    for (int i = 0; i <= input1; ++i) sum += i;
+    cout << "Сума: " << sum << endl;
+
+    // Задача 2
+    int input2;
+    do {
+        cout << "Введіть число для факторіалу (не менше 1): ";
+        cin >> input2;
+    } while (input2 < 1);
+
+    long long factorial = 1;
+    for (int i = 1; i <= input2; ++i) factorial *= i;
+    cout << "Факторіал: " << factorial << endl;
+
+    // Задача 3
+    int input3;
+    do {
+        cout << "Введіть число для таблиці множення (не менше 1): ";
+        cin >> input3;
+    } while (input3 < 1);
+
+    for (int i = 1; i <= 10; ++i) {
+        cout << input3 << " * " << i << " = " << input3 * i << endl;
+    }
+
+    // Задача 4
+    int width;
+    do {
+        cout << "Введіть ширину лінії: ";
+        cin >> width;
+    } while (width < 1);
+
+    cout << "\033[47;30m"; 
+    for (int i = 0; i < width; ++i) cout << "*";
+    cout << "\033[0m" << endl;
+
+    // Задача 5
+    int height;
+    do {
+        cout << "Введіть висоту лінії: ";
+        cin >> height;
+    } while (height < 1);
+
+    cout << "\033[42;37m";
+    for (int i = 0; i < height; ++i) cout << "*\n";
+    cout << "\033[0m";
+
+    // Задача 6
+    for (int i = 1; i <= 10; ++i)
+        for (int j = 1; j <= 10; ++j)
+            cout << i << " * " << j << " = " << i * j << endl;
+
+    // Задача 7
+    for (int i = 1; i <= 9; ++i) {
+        for (int j = 1; j <= 9; ++j) {
+            cout << setw(4) << i * j;
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
